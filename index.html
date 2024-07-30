@@ -23,10 +23,15 @@
           alert("Web Share API not supported.");
         }
       }
+
+      function redirectToLink() {
+            window.location.href = "familyItem.html";
+        }
     </script>
   </head>
   <body>
     <h3>Hello World</h3>
-    <button onclick="showAlert()">Click Me!</button>
+    <button onclick="showAlert()">show share</button>
+    <button onclick="redirectToLink()">Go to link</button>
   </body>
 </html>

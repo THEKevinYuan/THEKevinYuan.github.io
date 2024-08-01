@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .bank-account {
+            margin: 20px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bank Account Details</h1>
+
+    <div class="bank-account">
+        <p>台新 (812): <span id="account1">0020861000177887</span></p>
+        <button onclick="copyToClipboard('account1')">Copy Bank Account 1</button>
+    </div>
+
+    <div class="bank-account">
+        <p>國泰 (013): <span id="account2">699505928621</span></p>
+        <button onclick="copyToClipboard('account2')">Copy Bank Account 2</button>
+    </div>
+
+    <div class="bank-account">
+        <p>第一銀行 (007): <span id="account3">14857035866</span></p>
+        <button onclick="copyToClipboard('account3')">Copy Bank Account 3</button>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            var copyText = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(copyText).then(function() {
+                alert("Copied the text: " + copyText);
+            }, function(err) {
+                alert('Failed to copy text: ', err);
+            });
+        }
+    </script>
+
+</body>
+</html>
